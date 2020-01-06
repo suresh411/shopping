@@ -1,0 +1,36 @@
+<p>services works!</p>
+<!-- <ul>
+    <li *ngFor="let pro of my">{{pro.price}}</li>
+</ul> -->
+
+
+<div class="container">
+    <div class="row">
+      <div style="width: 300px;height:500px; overflow-y: scroll;">
+        <div class="col-12">
+      <div class="" *ngFor="let product of mypro">
+          <div class="card mb-3">
+              <img class="img-fluid img-responsive" src="{{product.img}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-danger text-capitalize font-weight-bold">{{product.name}}</h5>
+                <!-- <h6 class="card-title text-primary">{{product.features}}</h6>
+                <h6 class="text-dark center">&#8377;{{product.price}}</h6> -->
+                <button  class="btn btn-primary"><a routerLink="/about/services/{{product.id}}" class="text-light">details</a></button>
+              </div>
+            </div>
+      </div>
+      
+    </div>
+  </div>
+      <p class="col-6">
+        {{features}}
+    </p>
+    </div>
+
+  </div>
+
+  
+
+
+
+

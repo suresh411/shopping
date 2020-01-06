@@ -1,16 +1,78 @@
-<div class="container justify-center w-25 my-5 border p-5 bg-info">
+<!-- <div class="container justify-center w-25 my-5 border p-5 bg-info">
     <form class="form-group">
         <div class="form-group">
             <label>username:</label>
-            <input type="email" placeholder="Phone No/Email" class="form-control" required>
+            <input type="email" placeholder="Phone No/Email" class="form-control" required="email">
         </div>
         <div class="form-group">
             <label>password:</label>
-            <input type="number" placeholder="password" class="form-control"required>
+            <input type="number" placeholder="password" class="form-control"required="password">
         </div>
-        <button type="button" routerLink="/cart" class="btn btn-primary mb-5">Log In</button>
-        <p>create a new account? <a class="text-light" routerLink="/signup">signup</a></p>
+        <button type="button"  (click)="submit()" class="btn btn-primary mb-5">Log In</button>
+        <p>create a new account? <a class="text-light">signup</a></p>
     </form>
     
-</div>
+</div> -->
+
+
+<!-- 
+<form #f="ngForm" (ngSubmit)="submit(f)" class="container mt-5 p-5 border w-25 bg-dark" method="post">
+     
+    <div class="form-group">
+          <label for="firstName" class="text-primary">Email or UserName:</label>
+          <input minlength="3" maxlength="10" pattern="suresh"
+          ngModel name="firstNam" placeholder="firstName"
+           #firstName="ngModel"  type="text" class="form-control" required value=""><br>
+
+           <label class="text-primary" for="password">Password:</label >
+           <input minlength="8" maxlength="16" 
+           ngModel name="password" placeholder="password" type="password"
+            #password="ngModel"   class="form-control" required>
+
+            <a routerLink="">Forget Password</a>
+
+
+          <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+              <div *ngIf="firstName.errors.required">firstName is required</div>
+              <div *ngIf="firstName.errors.minlength">firstName should be minimum 3 char</div>
+              <div *ngIf="firstName.errors.pattern">firstName doent match</div>
+          </div>
+         
+
+        <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+            <div *ngIf="password.errors.required">password is required</div>
+            <div *ngIf="password.errors.minlength">password should be minimum 8 char</div>
+            <div *ngIf="password.errors.pattern">password doent match</div>
+       </div>
+
+    </div>
+
+
+    <div class="checkbox">
+          <label for="">
+          <input type="checkbox" ngModel name="isSubscribed">subscribe to mailing list
+        
+        </label>
+    </div>
+
+   
+
+
+    <input type="submit" class="btn btn-primary justify-center" value="submit"> -->
+
+
+    <!-- <p>{{f.value | json}}</p> -->
+
+
+<!--     
+</form> -->
+
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <input type="text" formControlName="Email" required>
+    <input type="password" formContolName="Password" required>
+    <input type="submit" value="login">
+
+  </form>
+
 

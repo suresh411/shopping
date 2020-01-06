@@ -19,8 +19,10 @@ export class ProductComponent implements OnInit {
   addtocart(p:any){
     if(this.service.cart.hasOwnProperty(p.id)){
       this.service.cart[p.id].quantity+=1
+      console.log(p)
      }else{
       this.service.cart[p.id]=p
+      console.log(p)
     }
   }
 
